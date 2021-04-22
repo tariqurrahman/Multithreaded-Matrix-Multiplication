@@ -1,0 +1,431 @@
+First matrix:
+        [ [9 4 9 8 5 1 6 2 1 4],
+          [0 0 5 1 1 7 9 0 3 4],
+          [3 8 9 2 0 6 6 8 6 3],
+          [8 3 3 4 2 6 5 1 6 9],
+          [4 1 2 5 3 3 4 2 6 7],
+          [2 9 9 0 5 7 7 5 9 8],
+          [5 1 9 0 0 2 2 2 2 7],
+          [3 9 0 9 7 0 7 9 8 3],
+          [1 3 2 6 5 1 6 8 7 4],
+          [4 3 5 1 1 1 8 0 2 5] ]
+Second matrix:
+        [ [2 1 9 0 3 7 7 9 6 1 5 5 5 0 0],
+          [8 8 6 7 5 6 1 8 0 2 2 1 6 4 0],
+          [7 2 7 5 3 3 9 1 9 4 1 6 6 6 7],
+          [7 4 7 2 2 3 6 2 5 6 6 8 3 7 8],
+          [8 7 7 9 7 9 8 7 0 9 4 6 1 3 3],
+          [5 4 7 0 1 8 1 8 0 8 7 8 2 3 9],
+          [4 4 1 2 4 9 5 3 1 4 0 5 9 9 1],
+          [7 2 3 3 2 6 0 9 1 1 2 6 0 2 8],
+          [0 6 9 3 7 7 8 2 1 1 9 5 4 2 8],
+          [1 0 7 0 4 2 0 1 0 8 8 4 7 3 2] ]
+------------------------------------------------
+The queue is empty Thread-1 is waiting
+The queue is empty Thread-2 is waiting
+Producer puts row 0-3 of matrix A and column 0-3 of B to buffer
+Consumer Thread-1 gets row  0-3 of matrix A and column 0-3 of B from buffer
+The queue is empty Thread-2 is waiting
+Consumer Thread-1 finishes calculating
+         [ [9 4 9 8 5 1 6 2 1 4],
+           [0 0 5 1 1 7 9 0 3 4],
+           [3 8 9 2 0 6 6 8 6 3] ]
+  *      [ [2 1 9],
+           [8 8 6],
+           [7 2 7],
+           [7 4 7],
+           [8 7 7],
+           [5 4 7],
+           [4 4 1],
+           [7 2 3],
+           [0 6 9],
+           [1 0 7] ]
+  =>     [ [256 164 315],
+           [125 103 162],
+           [260 193 299] ]
+Producer puts row 0-3 of matrix A and column 3-6 of B to buffer
+Consumer Thread-2 gets row  0-3 of matrix A and column 3-6 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [9 4 9 8 5 1 6 2 1 4],
+           [0 0 5 1 1 7 9 0 3 4],
+           [3 8 9 2 0 6 6 8 6 3] ]
+  *      [ [0 3 7],
+           [7 5 6],
+           [5 3 3],
+           [2 2 3],
+           [9 7 9],
+           [0 1 8],
+           [2 4 9],
+           [3 2 6],
+           [3 7 7],
+           [0 4 2] ]
+  =>     [ [155 177 272],
+           [63 104 193],
+           [159 180 300] ]
+Producer puts row 0-3 of matrix A and column 6-9 of B to buffer
+Producer puts row 0-3 of matrix A and column 9-12 of B to buffer
+Consumer Thread-1 gets row  0-3 of matrix A and column 6-9 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [9 4 9 8 5 1 6 2 1 4],
+           [0 0 5 1 1 7 9 0 3 4],
+           [3 8 9 2 0 6 6 8 6 3] ]
+  *      [ [7 9 6],
+           [1 8 0],
+           [9 1 9],
+           [6 2 5],
+           [8 7 0],
+           [1 8 0],
+           [5 3 1],
+           [0 9 1],
+           [8 2 1],
+           [0 1 0] ]
+  =>     [ [275 223 184],
+           [135 107 62],
+           [206 257 129] ]
+Producer puts row 0-3 of matrix A and column 12-15 of B to buffer
+Producer puts row 3-6 of matrix A and column 0-3 of B to buffer
+Producer puts row 3-6 of matrix A and column 3-6 of B to buffer
+Producer puts row 3-6 of matrix A and column 6-9 of B to buffer
+Consumer Thread-2 gets row  0-3 of matrix A and column 9-12 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [9 4 9 8 5 1 6 2 1 4],
+           [0 0 5 1 1 7 9 0 3 4],
+           [3 8 9 2 0 6 6 8 6 3] ]
+  *      [ [1 5 5],
+           [2 2 1],
+           [4 1 6],
+           [6 6 8],
+           [9 4 6],
+           [8 7 8],
+           [4 0 5],
+           [1 2 6],
+           [1 9 5],
+           [8 8 4] ]
+  =>     [ [213 182 268],
+           [162 123 176],
+           [177 188 261] ]
+Consumer Thread-2 gets row  0-3 of matrix A and column 12-15 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [9 4 9 8 5 1 6 2 1 4],
+           [0 0 5 1 1 7 9 0 3 4],
+           [3 8 9 2 0 6 6 8 6 3] ]
+  *      [ [5 0 0],
+           [6 4 0],
+           [6 6 7],
+           [3 7 8],
+           [1 3 3],
+           [2 3 9],
+           [9 9 1],
+           [0 2 8],
+           [4 2 8],
+           [7 3 2] ]
+  =>     [ [240 216 189],
+           [169 160 150],
+           [234 209 257] ]
+Producer puts row 3-6 of matrix A and column 9-12 of B to buffer
+Producer puts row 3-6 of matrix A and column 12-15 of B to buffer
+Consumer Thread-1 gets row  3-6 of matrix A and column 0-3 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [8 3 3 4 2 6 5 1 6 9],
+           [4 1 2 5 3 3 4 2 6 7],
+           [2 9 9 0 5 7 7 5 9 8] ]
+  *      [ [2 1 9],
+           [8 8 6],
+           [7 2 7],
+           [7 4 7],
+           [8 7 7],
+           [5 4 7],
+           [4 4 1],
+           [7 2 3],
+           [0 6 9],
+           [1 0 7] ]
+  =>     [ [171 150 320],
+           [141 125 246],
+           [285 247 378] ]
+Producer puts row 6-9 of matrix A and column 0-3 of B to buffer
+Producer puts row 6-9 of matrix A and column 3-6 of B to buffer
+The queue is full Thread-0 is waiting, size: 5
+Consumer Thread-1 gets row  3-6 of matrix A and column 3-6 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [8 3 3 4 2 6 5 1 6 9],
+           [4 1 2 5 3 3 4 2 6 7],
+           [2 9 9 0 5 7 7 5 9 8] ]
+  *      [ [0 3 7],
+           [7 5 6],
+           [5 3 3],
+           [2 2 3],
+           [9 7 9],
+           [0 1 8],
+           [2 4 9],
+           [3 2 6],
+           [3 7 7],
+           [0 4 2] ]
+  =>     [ [93 176 272],
+           [86 147 210],
+           [209 253 368] ]
+Producer puts row 6-9 of matrix A and column 6-9 of B to buffer
+The queue is full Thread-0 is waiting, size: 5
+Consumer Thread-2 gets row  3-6 of matrix A and column 6-9 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [8 3 3 4 2 6 5 1 6 9],
+           [4 1 2 5 3 3 4 2 6 7],
+           [2 9 9 0 5 7 7 5 9 8] ]
+  *      [ [7 9 6],
+           [1 8 0],
+           [9 1 9],
+           [6 2 5],
+           [8 7 0],
+           [1 8 0],
+           [5 3 1],
+           [0 9 1],
+           [8 2 1],
+           [0 1 0] ]
+  =>     [ [205 214 107],
+           [172 150 79],
+           [258 282 114] ]
+Producer puts row 6-9 of matrix A and column 9-12 of B to buffer
+The queue is full Thread-0 is waiting, size: 5
+Consumer Thread-2 gets row  3-6 of matrix A and column 9-12 of B from buffer
+Consumer Thread-1 gets row  3-6 of matrix A and column 12-15 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [8 3 3 4 2 6 5 1 6 9],
+           [4 1 2 5 3 3 4 2 6 7],
+           [2 9 9 0 5 7 7 5 9 8] ]
+  *      [ [1 5 5],
+           [2 2 1],
+           [4 1 6],
+           [6 6 8],
+           [9 4 6],
+           [8 7 8],
+           [4 0 5],
+           [1 2 6],
+           [1 9 5],
+           [8 8 4] ]
+  =>     [ [215 251 250],
+           [175 201 205],
+           [263 261 301] ]
+Consumer Thread-1 finishes calculating
+         [ [8 3 3 4 2 6 5 1 6 9],
+           [4 1 2 5 3 3 4 2 6 7],
+           [2 9 9 0 5 7 7 5 9 8] ]
+  *      [ [5 0 0],
+           [6 4 0],
+           [6 6 7],
+           [3 7 8],
+           [1 3 3],
+           [2 3 9],
+           [9 9 1],
+           [0 2 8],
+           [4 2 8],
+           [7 3 2] ]
+  =>     [ [234 168 192],
+           [171 142 172],
+           [292 241 276] ]
+Producer puts row 6-9 of matrix A and column 12-15 of B to buffer
+Producer puts row 9-10 of matrix A and column 0-3 of B to buffer
+The queue is full Thread-0 is waiting, size: 5
+Consumer Thread-2 gets row  6-9 of matrix A and column 0-3 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [5 1 9 0 0 2 2 2 2 7],
+           [3 9 0 9 7 0 7 9 8 3],
+           [1 3 2 6 5 1 6 8 7 4] ]
+  *      [ [2 1 9],
+           [8 8 6],
+           [7 2 7],
+           [7 4 7],
+           [8 7 7],
+           [5 4 7],
+           [4 4 1],
+           [7 2 3],
+           [0 6 9],
+           [1 0 7] ]
+  =>     [ [120 63 203],
+           [291 254 320],
+           [211 174 246] ]
+Consumer Thread-1 gets row  6-9 of matrix A and column 3-6 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [5 1 9 0 0 2 2 2 2 7],
+           [3 9 0 9 7 0 7 9 8 3],
+           [1 3 2 6 5 1 6 8 7 4] ]
+  *      [ [0 3 7],
+           [7 5 6],
+           [5 3 3],
+           [2 2 3],
+           [9 7 9],
+           [0 1 8],
+           [2 4 9],
+           [3 2 6],
+           [3 7 7],
+           [0 4 2] ]
+  =>     [ [68 103 142],
+           [209 235 344],
+           [145 177 261] ]
+Producer puts row 9-10 of matrix A and column 3-6 of B to buffer
+Producer puts row 9-10 of matrix A and column 6-9 of B to buffer
+The queue is full Thread-0 is waiting, size: 5
+Consumer Thread-1 gets row  6-9 of matrix A and column 6-9 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [5 1 9 0 0 2 2 2 2 7],
+           [3 9 0 9 7 0 7 9 8 3],
+           [1 3 2 6 5 1 6 8 7 4] ]
+  *      [ [7 9 6],
+           [1 8 0],
+           [9 1 9],
+           [6 2 5],
+           [8 7 0],
+           [1 8 0],
+           [5 3 1],
+           [0 9 1],
+           [8 2 1],
+           [0 1 0] ]
+  =>     [ [145 113 117],
+           [239 287 87],
+           [191 198 75] ]
+Consumer Thread-1 gets row  6-9 of matrix A and column 9-12 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [5 1 9 0 0 2 2 2 2 7],
+           [3 9 0 9 7 0 7 9 8 3],
+           [1 3 2 6 5 1 6 8 7 4] ]
+  *      [ [1 5 5],
+           [2 2 1],
+           [4 1 6],
+           [6 6 8],
+           [9 4 6],
+           [8 7 8],
+           [4 0 5],
+           [1 2 6],
+           [1 9 5],
+           [8 8 4] ]
+  =>     [ [127 128 156],
+           [207 229 279],
+           [175 187 235] ]
+Producer puts row 9-10 of matrix A and column 9-12 of B to buffer
+Producer puts row 9-10 of matrix A and column 12-15 of B to buffer
+The queue is full Thread-0 is waiting, size: 5
+Consumer Thread-2 gets row  6-9 of matrix A and column 12-15 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [5 1 9 0 0 2 2 2 2 7],
+           [3 9 0 9 7 0 7 9 8 3],
+           [1 3 2 6 5 1 6 8 7 4] ]
+  *      [ [5 0 0],
+           [6 4 0],
+           [6 6 7],
+           [3 7 8],
+           [1 3 3],
+           [2 3 9],
+           [9 9 1],
+           [0 2 8],
+           [4 2 8],
+           [7 3 2] ]
+  =>     [ [164 111 129],
+           [219 226 242],
+           [170 180 220] ]
+Consumer Thread-1 gets row  9-10 of matrix A and column 0-3 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [4 3 5 1 1 1 8 0 2 5] ]
+  *      [ [2 1 9],
+           [8 8 6],
+           [7 2 7],
+           [7 4 7],
+           [8 7 7],
+           [5 4 7],
+           [4 4 1],
+           [7 2 3],
+           [0 6 9],
+           [1 0 7] ]
+  =>     [ [124 97 171] ]
+Consumer Thread-2 gets row  9-10 of matrix A and column 3-6 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [4 3 5 1 1 1 8 0 2 5] ]
+  *      [ [0 3 7],
+           [7 5 6],
+           [5 3 3],
+           [2 2 3],
+           [9 7 9],
+           [0 1 8],
+           [2 4 9],
+           [3 2 6],
+           [3 7 7],
+           [0 4 2] ]
+  =>     [ [79 118 177] ]
+Consumer Thread-1 gets row  9-10 of matrix A and column 6-9 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [4 3 5 1 1 1 8 0 2 5] ]
+  *      [ [7 9 6],
+           [1 8 0],
+           [9 1 9],
+           [6 2 5],
+           [8 7 0],
+           [1 8 0],
+           [5 3 1],
+           [0 9 1],
+           [8 2 1],
+           [0 1 0] ]
+  =>     [ [147 115 84] ]
+Consumer Thread-2 gets row  9-10 of matrix A and column 9-12 of B from buffer
+Consumer Thread-2 finishes calculating
+         [ [4 3 5 1 1 1 8 0 2 5] ]
+  *      [ [1 5 5],
+           [2 2 1],
+           [4 1 6],
+           [6 6 8],
+           [9 4 6],
+           [8 7 8],
+           [4 0 5],
+           [1 2 6],
+           [1 9 5],
+           [8 8 4] ]
+  =>     [ [127 106 145] ]
+Consumer Thread-1 gets row  9-10 of matrix A and column 12-15 of B from buffer
+Consumer Thread-1 finishes calculating
+         [ [4 3 5 1 1 1 8 0 2 5] ]
+  *      [ [5 0 0],
+           [6 4 0],
+           [6 6 7],
+           [3 7 8],
+           [1 3 3],
+           [2 3 9],
+           [9 9 1],
+           [0 2 8],
+           [4 2 8],
+           [7 3 2] ]
+  =>     [ [189 146 89] ]
+Producer successfully assembly all the results from consumer threads
+------------------------------------------------
+Final result of parallel matrix multiplication:
+         [ [256 164 315 155 177 272 275 223 184 213 182 268 240 216 189],
+           [125 103 162 63 104 193 135 107 62 162 123 176 169 160 150],
+           [260 193 299 159 180 300 206 257 129 177 188 261 234 209 257],
+           [171 150 320 93 176 272 205 214 107 215 251 250 234 168 192],
+           [141 125 246 86 147 210 172 150 79 175 201 205 171 142 172],
+           [285 247 378 209 253 368 258 282 114 263 261 301 292 241 276],
+           [120 63 203 68 103 142 145 113 117 127 128 156 164 111 129],
+           [291 254 320 209 235 344 239 287 87 207 229 279 219 226 242],
+           [211 174 246 145 177 261 191 198 75 175 187 235 170 180 220],
+           [124 97 171 79 118 177 147 115 84 127 106 145 189 146 89] ]
+Verified result of sequential matrix multiplication: 
+        [ [256 164 315 155 177 272 275 223 184 213 182 268 240 216 189],
+          [125 103 162 63 104 193 135 107 62 162 123 176 169 160 150],
+          [260 193 299 159 180 300 206 257 129 177 188 261 234 209 257],
+          [171 150 320 93 176 272 205 214 107 215 251 250 234 168 192],
+          [141 125 246 86 147 210 172 150 79 175 201 205 171 142 172],
+          [285 247 378 209 253 368 258 282 114 263 261 301 292 241 276],
+          [120 63 203 68 103 142 145 113 117 127 128 156 164 111 129],
+          [291 254 320 209 235 344 239 287 87 207 229 279 219 226 242],
+          [211 174 246 145 177 261 191 198 75 175 187 235 170 180 220],
+          [124 97 171 79 118 177 147 115 84 127 106 145 189 146 89] ]
+------------------------------------------------
+PRODUCER / CONSUMER SIMULATION RESULT
+Simulation Time:                     469ms
+Average Thread Sleep Time:           27.625
+Number of Producer Threads:          1
+Number of Consumer Threads:          2
+Size of Buffer:                      5
+Total Number of Items Produced:      20
+ Thread 0:                           20
+Total Number of Items Consumed:      20
+ Thread 1:                           11
+ Thread 2:                           9
+Number Of Items Remaining in Buffer: 0
+Number Of Times Buffer Was Full:     6
+Number Of Times Buffer Was Empty:    3
